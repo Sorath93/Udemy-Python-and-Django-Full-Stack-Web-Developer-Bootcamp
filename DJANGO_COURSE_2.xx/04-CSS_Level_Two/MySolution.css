@@ -1,0 +1,41 @@
+/*cdb4db ffc8dd ffafcc bde0fe a2d2ff */
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+h1 {
+    text-align: center;
+}
+
+td{
+    width: 300px;
+    height: 500px;
+    background-color: brown ;
+    border-right: 10px white solid;
+}
+
+div {
+    border-left: 100px black;
+}
+
+#box1 {
+    background-color: #cdb4db;
+
+}
+
+#box2 {
+    background-color: #ffc8dd;
+}
+
+#box3 {
+    background-color: #ffafcc;
+}
+
+#box4 {
+    background-color: #bde0fe;
+}
+
+#box5 {
+    background-color: #a2d2ff;
+}
