@@ -24,8 +24,16 @@
 // sleepIn(false, true) → true
 
 function sleepIn(weekday, vacation) {
-    //Code Goes Here
+// We sleep in if it is not a weekday or
+// we're on vacation. Return true if we sleep in. So some example input and output:
+  if (!weekday || vacation) {
+    return true
+  }
+  else {
+      return false
+  }
 }
+
 
 
 //
@@ -42,7 +50,12 @@ function sleepIn(weekday, vacation) {
 // monkeyTrouble(true, false) → false
 
 function monkeyTrouble(aSmile, bSmile) {
-    //Code Goes Here
+  if ((aSmile && bSmile) || (!aSmile && !bSmile)) {
+    return true
+  }
+  else {
+    return false
+  }
 }
 
 
@@ -59,7 +72,7 @@ function monkeyTrouble(aSmile, bSmile) {
 // stringTimes("Hi", 1) → "Hi"
 
 function stringTimes(str, n) {
-    //Code Goes Here
+  return str.repeat(n)
 }
 
 // PROBLEM 4: LUCKY SUM
@@ -76,9 +89,19 @@ function stringTimes(str, n) {
 // luckySum(1, 2, 13) → 3
 // luckySum(1, 13, 3) → 1
 
-function luckySum(a, b, c){
-
-  //Code Goes Here
+function luckySum(a, b, c) {
+  if (a == 13) {
+    return 0
+  }
+  else if(b === 13) {
+    return a
+  }
+  else if(c === 13) {
+    return a + b
+  }
+  else {
+    return a + b + c
+  }
 }
 
 // PROBLEM 5:
@@ -95,8 +118,31 @@ function luckySum(a, b, c){
 // caught_speeding(65, false) → 1
 // caught_speeding(65, true) → 0
 
-function caught_speeding(speed, is_birthday){
-  //Code Goes Here
+function caught_speeding(speed, birthday) {
+  if (birthday) {
+    if (speed <= 65) {
+      return 0
+    }
+    else if (66 <= speed <= 85) {
+      return 1
+    }
+    else {
+      return 2
+    }
+
+  }
+
+  else {
+    if (speed <= 60) {
+      return 0
+    }
+    else if (61 <= speed <= 80) {
+      return 1
+    }
+    else {
+      return 2
+    }
+  }
 }
 
 
@@ -107,12 +153,26 @@ function caught_speeding(speed, is_birthday){
 // is possible to make the goal by choosing from the given bricks. This is a
 // little harder than it looks and can be done without any loops in a single line!
 //
-// If you can't figue this one out, don't worry, that's why its a bonus!
+// If you can't figure this one out, don't worry, that's why its a bonus!
 //
-// makeBricks(3, 1, 8) → true
-// makeBricks(3, 1, 9) → false
-// makeBricks(3, 2, 10) → true
+// makeBricks(3, 1, 8) → true  3*1 + 1*5 = 8
+// makeBricks(3, 1, 9) → false 3*1 + 1*5 != 9
+// makeBricks(3, 2, 10) → true 0*1 + 2*5 = 10  -> choosing 2 of the big bricks
 
 function makeBricks(small, big, goal){
-  //Code Goes Here
+  //I think this exercise has something to do with checking multiples, therefore use modulo
+  //makeBricks(3, 2, 12) is true because 2*1 + 2*5 = 12
+
+  for (x = 0; x <= small; x++) {
+    for (y = 0; y <= big; y++){
+      if (x + 5 * y == goal) {
+        console.log(x)
+        console.log(y)
+        return true
+      }
+    }
+    console.log(x)
+    console.log(y)
+    return false
+  }
 }
