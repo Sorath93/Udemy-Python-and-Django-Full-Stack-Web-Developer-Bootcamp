@@ -9,17 +9,19 @@ function cancelled(parameter) {
 function action(action) {
         if (action == "add") {
             var itemToAdd = prompt("what name would you like  to add?")  //check cancel has been pressed here
+            if (itemToAdd == null) {return}
             roster.push(itemToAdd)
         }
 
         else if (action == "remove") {
-            //check for an empty list
+
             if (roster.length === 0) {
                 alert("There is nothing to remove")
                 return
             }
 
             var itemToRemove = prompt("What name would you like to remove?") //check cancel has been pressed here
+            if (itemToRemove == null) { return }
             var itemToRemoveIndex = roster.indexOf(itemToRemove)
             console.log(itemToRemoveIndex)
             roster.splice(itemToRemoveIndex)
